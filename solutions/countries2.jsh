@@ -1,9 +1,13 @@
+import countries.*;
+var countries=new Countries().getAll();
 //1. Returns whether there is at least one country with the word _island_ in its name ignoring case.
-
+countries.stream().anyMatch(country -> country.getName().toLowerCase().contains("island"));
 
 //2. Returns the first country name that contains the word _island_ ignoring case.
+countries.stream().filter(country -> country.getName().toLowerCase().contains("island")).limit(1).forEach(System.out::println);
 
 //3. Prints each country name in which the first and the last letters are the same ignoring case.
+countries.stream().filter(country->country.getName().toLowerCase().).forEach(system.out::println);
 
 //4. Prints the populations of the first ten least populous countries (required intermediate operation: [`stream`](https:docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/stream/Stream.html#sorted()), [`limit`](https:docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/stream/Stream.html#limit(long)))).
 
